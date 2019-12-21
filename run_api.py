@@ -4,9 +4,14 @@ from flask import request
 from flask_cors import CORS
 from flask_api import FlaskAPI
 import os
+import logging
 
 app = FlaskAPI(__name__)
 CORS(app) # Required if the client is browser, else returns cross origin requests errors
+
+handler = logging.FileHandler('app.log')  # errors logged to this file
+handler.setLevel(logging.ERROR)  # only log errors and above
+app.logger.addHandler(handler)  # attach the handler to the app's logger
 
 # GET Function to get data from a file
 @app.route("/get/<filename>", methods=['GET'])
