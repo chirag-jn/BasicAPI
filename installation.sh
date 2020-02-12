@@ -2,7 +2,7 @@ sudo apt-get install python3-pip python3-dev nginx
 sudo python3 -m pip install -r requirements.txt
 
 # cd /var/www/html
-# sudo git clone https://github.com/chirag-jn/basicapi
+sudo git clone https://github.com/chirag-jn/basicapi
 # sudo mv BasicAPI basicapi
 # cd basicapi
 
@@ -15,7 +15,7 @@ cd ..
 sudo chown -R www-data.www-data basicapi
 cd basicapi
 
-sudo mv basicapi.service /etc/systemd/system/basicapi.service
+sudo cp basicapi.service /etc/systemd/system/basicapi.service
 
 sudo systemctl start basicapi
 sudo systemctl enable basicapi
