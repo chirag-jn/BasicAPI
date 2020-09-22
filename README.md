@@ -1,4 +1,4 @@
-# BasicAPI
+# flask-on-nginx
 Flask based API with GET and POST requests, running on nginx server
 
 ## Installation
